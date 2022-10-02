@@ -1,0 +1,29 @@
+server:
+  servlet:
+    context-path: /my-app
+  port: 8480
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/database?stringtype=unspecified
+    username: postgres
+    password: root
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    show-sql: true
+    hibernate:
+            ddl-auto: update
+# при update: данные не удаляются из таблиц , вновь созданные таблицы подгружаются,
+# измененный столбец таблицы подгружается как новый ,а столбец до изменений сохраняется
+# при create: все данные удаляются
+
+  flyway:
+    baseline-on-migrate: true
+
+
+
+
+
+
